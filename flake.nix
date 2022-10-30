@@ -17,7 +17,7 @@
     pkgs = genSystems (system: import nixpkgs {inherit system;});
   in {
     packages = genSystems (system: rec {
-      gdextensions = pkgs.${system}.callPackage ./. {};
+      gdextensions = pkgs.${system}.callPackage ./gdextensions {};
       default = gdextensions;
     });
   };
