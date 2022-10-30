@@ -8,12 +8,12 @@
 
 config_version=5
 
-[native_extensions]
-
-paths=["res://result/example.gdextension"]
-
 [application]
 
 config/name="satanic-slumber-party"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://icon.svg"
+
+[native_extensions]
+
+paths=["res://result/example.gdextension"]

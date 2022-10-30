@@ -39,6 +39,9 @@ in
       scons ${sconsFlags}
       popd > /dev/null
     '';
+    patchPhase = ''
+      sed -i "s|res://bin|res://result/bin|g" test/demo/example.gdextension
+    '';
     installPhase = ''
       cp -r test/demo $out
     '';
