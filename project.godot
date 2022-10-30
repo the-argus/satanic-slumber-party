@@ -8,6 +8,10 @@
 
 config_version=5
 
+[native_extensions]
+
+paths=["res://result/example.gdextension"]
+
 [application]
 
 config/name="satanic-slumber-party"

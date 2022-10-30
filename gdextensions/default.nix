@@ -40,6 +40,6 @@ in
       popd > /dev/null
     '';
     installPhase = ''
-      cp -r . $out
+      cp -r test/demo $out
     '';
   }
