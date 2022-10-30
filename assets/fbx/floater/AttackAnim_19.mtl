@@ -1,0 +1,36 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v5.1.0)
+
+newmtl Brain
+Kd 0.800000012 0.800000012 0.800000012
+Ka 0 0 0
+Ks 0.200000003 0.200000003 0.200000003
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 20
+illum 2
+map_Ns Z:\IGMProfile\Documents\maya\projects\slumberparty\Content\Enemy_Assets\Textures\T_Floater_R.png
+
+newmtl Rusty metal1
+Kd 1 1 1
+Ka 0 0 0
+Ks 0.5 0.5 0.5
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 20
+illum 2
+map_Ns Z:\IGMProfile\Documents\maya\projects\slumberparty\Content\Enemy_Assets\Textures\T_Floater_R.png
+
+newmtl Aluminium sand
+Kd 0.800000012 0.800000012 0.800000012
+Ka 0 0 0
+Ks 0.101818182 0.101818182 0.101818182
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 20
+illum 2
+map_Ns Z:\IGMProfile\Documents\maya\projects\slumberparty\Content\Enemy_Assets\Textures\T_Floater_R.png
+

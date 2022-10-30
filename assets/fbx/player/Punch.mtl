@@ -1,0 +1,16 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v5.1.0)
+
+newmtl male_casualsuit01
+Kd 1 1 1
+Ka 0.200000003 0.200000003 0.200000003
+Ks 1 1 1
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 20
+illum 2
+map_Kd MakeHuman\rigs\textures\male_casualsuit01_diffuse.png
+bump MakeHuman\rigs\textures\male_casualsuit01_normal.png
+map_bump MakeHuman\rigs\textures\male_casualsuit01_normal.png
+

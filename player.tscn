@@ -8,3 +8,5 @@
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("CylinderShape3D_5rec7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]

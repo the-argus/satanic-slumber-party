@@ -1,0 +1,97 @@
+# File produced by Open Asset Import Library (http://www.assimp.sf.net)
+# (assimp v5.1.0)
+
+newmtl Material
+Kd 0.800000012 0.800000012 0.800000012
+Ka 0 0 0
+Ks 0.800000012 0.800000012 0.800000012
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 25
+illum 2
+
+newmtl Door_material
+Kd 0.800000012 0.800000012 0.800000012
+Ka 0 0 0
+Ks 0.800000012 0.800000012 0.800000012
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 36
+illum 2
+
+newmtl DoorGlass_material
+Kd 0.333000004 0.342000008 0.899999976
+Ka 0 0 0
+Ks 0.333000004 0.342000008 0.899999976
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 36
+illum 2
+
+newmtl Handle_material
+Kd 0.578000009 0.555000007 0.736000001
+Ka 0 0 0
+Ks 0.578000009 0.555000007 0.736000001
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 36
+illum 2
+
+newmtl hidden_material
+Kd 1 1 1
+Ka 0 0 0
+Ks 1 1 1
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 36
+illum 2
+
+newmtl PVC
+Kd 1 1 1
+Ka 0 0 0
+Ks 1 1 1
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 36
+illum 2
+
+newmtl Plastic
+Kd 0 0 0
+Ka 0 0 0
+Ks 0 0 0
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 36
+illum 2
+
+newmtl Glass
+Kd 0.333000004 0.342000008 0.899999976
+Ka 0 0 0
+Ks 0.333000004 0.342000008 0.899999976
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 36
+illum 2
+
+newmtl Marble
+Kd 0.899999976 0.800000012 0.699999988
+Ka 0 0 0
+Ks 0.899999976 0.800000012 0.699999988
+Ke 0 0 0
+Tf 0 0 0
+d 1
+Ns 36
+illum 2
+
+newmtl DefaultMaterial
+Kd 0.800000012 0.800000012 0.800000012
+illum 1
+
