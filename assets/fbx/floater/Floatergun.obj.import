@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c2xl2cc6ikeaq"
+path="res://.godot/imported/Floatergun.obj-f5ee33d4eef302bc68b6e20e1a362f23.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Floatergun.obj-f5ee33d4eef302bc68b6e20e1a362f23.mesh"]
+
+source_file="res://assets/fbx/floater/Floatergun.obj"
+dest_files=["res://.godot/imported/Floatergun.obj-f5ee33d4eef302bc68b6e20e1a362f23.mesh", "res://.godot/imported/Floatergun.obj-f5ee33d4eef302bc68b6e20e1a362f23.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

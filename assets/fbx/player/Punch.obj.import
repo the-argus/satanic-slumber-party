@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cogds816kx5sw"
+path="res://.godot/imported/Punch.obj-409a103798cf119cc96323026504aa07.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Punch.obj-409a103798cf119cc96323026504aa07.mesh"]
+
+source_file="res://assets/fbx/player/Punch.obj"
+dest_files=["res://.godot/imported/Punch.obj-409a103798cf119cc96323026504aa07.mesh", "res://.godot/imported/Punch.obj-409a103798cf119cc96323026504aa07.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
