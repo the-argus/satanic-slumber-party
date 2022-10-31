@@ -1,10 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://nsf2crxq52yo"]
+[gd_scene load_steps=4 format=3 uid="uid://nsf2crxq52yo"]
 
-[ext_resource type="ArrayMesh" uid="uid://bqbgcdanuii6p" path="res://assets/fbx/player/Idle.obj" id="1_rxqrr"]
+[ext_resource type="PackedScene" uid="uid://ckv02biqkcu2t" path="res://assets/fbx/player/viewmodels_idle-imported.tscn" id="1_r5i2s"]
+[ext_resource type="Script" path="res://script/player/viewmodels.gd" id="1_u1y35"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_5rec7"]
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_u1y35")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(0.998105, 0, 0, 0, 0.998105, 0, 0, 0, 0.998105, 0, 0, 0)
@@ -13,13 +15,8 @@ transform = Transform3D(0.998105, 0, 0, 0, 0.998105, 0, 0, 0, 0.998105, 0, 0, 0)
 shape = SubResource("CylinderShape3D_5rec7")
 
 [node name="Camera3D" type="Camera3D" parent="RigidBody3D"]
-transform = Transform3D(-0.997506, 0, -0.0937124, 0, 1.0019, 0, 0.0937124, 0, -0.997506, -0.0246987, 0.861309, -0.405332)
+transform = Transform3D(-1.0019, 0, 8.75888e-08, 0, 1.0019, 0, -8.75888e-08, 0, -1.0019, -0.0246987, 0.861309, -0.405332)
 fov = 90.0
 
-[node name="Viewmodels" type="MeshInstance3D" parent="RigidBody3D/Camera3D"]
-transform = Transform3D(-0.00389073, 0, -0.000928554, 0, 0.004, 0, 0.000928554, 0, -0.00389073, 0.00739893, -5.23867, 0.739703)
-mesh = ExtResource("1_rxqrr")
-skeleton = NodePath("../..")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="RigidBody3D/Camera3D/Viewmodels"]
-method_call_mode = 1
+[node name="viewmodels_idle" parent="RigidBody3D" instance=ExtResource("1_r5i2s")]
+transform = Transform3D(0.188719, 0, 0.0662215, 0, 0.2, 0, -0.0662215, 0, 0.188719, -0.0467386, -1.68919, -0.760171)

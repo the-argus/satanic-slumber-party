@@ -1271,7 +1271,7 @@
                     }
                 }
             ],
-            "name" : "BonesGRP|Take 001|BaseLayer",
+            "name" : "Animation",
             "samplers" : [
                 {
                     "input" : 13,
