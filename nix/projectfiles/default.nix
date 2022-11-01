@@ -21,9 +21,9 @@ in
 
     buildPhase = ''
       cp ${cmake-template} CMakeLists.txt
-      sed -i "s/__PACKAGENAMEREPLACE__/${pname}/g"
-      sed -i "s|__GODOTHEADERSREPLACE__|${gdExtensions}/godot-headers/|g"
-      sed -i "s|__GODOTCPPREPLACE__|${gdExtensions}|g"
+      sed -i "s/__PACKAGENAMEREPLACE__/${pname}/g" CMakeLists.txt
+      sed -i "s|__GODOTHEADERSREPLACE__|${gdExtensions}/godot-headers/|g" CMakeLists.txt
+      sed -i "s|__GODOTCPPREPLACE__|${gdExtensions}|g" CMakeLists.txt
     '';
 
     installPhase = ''
