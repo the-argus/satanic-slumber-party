@@ -15,16 +15,20 @@
     ];
     genSystems = nixpkgs.lib.genAttrs supportedSystems;
     pkgs = genSystems (system: import nixpkgs {inherit system;});
+    gdextensions = genSystems (system: pkgs.${system}.callPackage ./gdextensions {});
   in {
     packages = genSystems (system: rec {
-      gdextensions = pkgs.${system}.callPackage ./nix/gdextensions {};
-      project = pkgs.${system}.callPackage ./nix/projectfiles {};
-      # should also add a builder for the actual godot game at some point
+      gdextensions = gdextensions.${system};
+      project = pkgs.${system}.callPackage ./. {};
       default = project;
     });
 
     devShell = genSystems (system:
       pkgs.${system}.mkShell {
+        shellHook = ''
+          export GODOT_CPP_LOCATION=${gdextensions.${system}}
+          export GODOT_HEADERS_LOCATION=${gdextensions.${system}}/godot-headers
+        '';
         packages = with pkgs.${system}; [
           clangStdenv
           libclang

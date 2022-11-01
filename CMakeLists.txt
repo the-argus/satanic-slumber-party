@@ -1,8 +1,16 @@
-project(__PACKAGENAMEREPLACE__)
+project("godot-ssp")
 cmake_minimum_required(VERSION 3.6)
 
-set(GODOT_HEADERS_PATH __GODOTHEADERSREPLACE__ CACHE STRING "Path to Godot headers")
-set(CPP_BINDINGS_PATH __GODOTCPPREPLACE__ CACHE STRING "Path to C++ bindings")
+IF(DEFINED ENV{GODOT_CPP_LOCATION})
+    set(CPP_BINDINGS_PATH ENV{GODOT_CPP_LOCATION} CACHE STRING "Path to C++ bindings")
+else()
+    message(FATAL_ERROR "Environment variable GODOT_CPP_LOCATION must be set.")
+endif()
+IF(DEFINED ENV{GODOT_HEADERS_LOCATION})
+    set(GODOT_HEADERS_PATH ENV{GODOT_HEADERS_LOCATION} CACHE STRING "Path to Godot headers")
+else()
+    set(GODOT_HEADERS_PATH ${CPP_BINDINGS_PATH}/godot-headers CACHE STRING "Path to Godot headers")
+endif()
 
 if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
 	set(TARGET_PATH x11)
@@ -15,7 +23,7 @@ else()
 endif()
 
 # Change the output directory to the bin directory
-set(BUILD_PATH ${CMAKE_SOURCE_DIR}/../bin/${TARGET_PATH})
+set(BUILD_PATH ${CMAKE_SOURCE_DIR}/bin/${TARGET_PATH})
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${BUILD_PATH}")
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${BUILD_PATH}")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${BUILD_PATH}")
@@ -93,7 +101,7 @@ else()
 endif()
 
 # Get Sources
-file(GLOB_RECURSE SOURCES ../src/*.c**)
+file(GLOB_RECURSE SOURCES src/*.c**)
 file(GLOB_RECURSE HEADERS include/*.h**)
 
 # Define our godot-cpp library
@@ -147,4 +155,4 @@ endif()
 set_property(TARGET ${PROJECT_NAME} APPEND_STRING PROPERTY COMPILE_FLAGS ${GODOT_COMPILE_FLAGS})
 set_property(TARGET ${PROJECT_NAME} APPEND_STRING PROPERTY LINK_FLAGS ${GODOT_LINKER_FLAGS})
 
-set_property(TARGET ${PROJECT_NAME} PROPERTY OUTPUT_NAME "__PACKAGENAMEREPLACE__")
+set_property(TARGET ${PROJECT_NAME} PROPERTY OUTPUT_NAME "godot-ssp")
