@@ -1,3 +1,5 @@
+bin/
+
 
 # Godot-specific ignores
 .import/
@@ -13,3 +15,7 @@ data_*/
 result
 
 .direnv/
+
+# i like to work with these in this directory sometimes
+godot-cpp/
+godot-headers

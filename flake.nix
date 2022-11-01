@@ -17,8 +17,10 @@
     pkgs = genSystems (system: import nixpkgs {inherit system;});
   in {
     packages = genSystems (system: rec {
-      gdextensions = pkgs.${system}.callPackage ./gdextensions {};
-      default = gdextensions;
+      gdextensions = pkgs.${system}.callPackage ./nix/gdextensions {};
+      project = pkgs.${system}.callPackage ./nix/projectfiles {};
+      # should also add a builder for the actual godot game at some point
+      default = project;
     });
   };
 }
