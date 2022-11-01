@@ -6,7 +6,10 @@
   emptyDirectory,
   ...
 }: let
-  cmake-template = builtins.toFile "cmake-template" ./cmake-template.txt;
+  cmake-template =
+    builtins.toFile
+    "cmake-template"
+    (builtins.readFile ./cmake-template.txt);
   gdExtensions = callPackage ../gdextensions {};
 in
   stdenv.mkDerivation rec {
@@ -17,10 +20,10 @@ in
     dontPatch = true;
 
     buildPhase = ''
-        cp ${cmake-template} CMakeLists.txt
-        sed -i "s/__PACKAGENAMEREPLACE__/${pname}/g"
-        sed -i "s|__GODOTHEADERSREPLACE__|${gdExtensions}/godot-headers/|g"
-        sed -i "s|__GODOTCPPREPLACE__|${gdExtensions}|g"
+      cp ${cmake-template} CMakeLists.txt
+      sed -i "s/__PACKAGENAMEREPLACE__/${pname}/g"
+      sed -i "s|__GODOTHEADERSREPLACE__|${gdExtensions}/godot-headers/|g"
+      sed -i "s|__GODOTCPPREPLACE__|${gdExtensions}|g"
     '';
 
     installPhase = ''

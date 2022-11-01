@@ -19,3 +19,16 @@ result
 # i like to work with these in this directory sometimes
 godot-cpp/
 godot-headers
+
+# cmake stuff
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
