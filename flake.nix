@@ -22,5 +22,18 @@
       # should also add a builder for the actual godot game at some point
       default = project;
     });
+
+    devShell = genSystems (system:
+      pkgs.${system}.mkShell {
+        packages = with pkgs.${system}; [
+          clangStdenv
+          libclang
+          llvmPackages.libstdcxxClang
+          clang-tools
+          bear
+
+          cmake
+        ];
+      });
   };
 }
