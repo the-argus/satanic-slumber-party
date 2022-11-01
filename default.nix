@@ -15,7 +15,9 @@ stdenv.mkDerivation {
   buildPhase = ''
     export GODOT_CPP_LOCATION=${callPackage ./gdextensions {}}
     export GODOT_HEADERS_LOCATION=${callPackage ./gdextensions {}}/godot-headers
-    cmake
+    cmake -S . -B bin
+    cd bin
+    make
   '';
 
   installPhase = ''

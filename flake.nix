@@ -15,10 +15,10 @@
     ];
     genSystems = nixpkgs.lib.genAttrs supportedSystems;
     pkgs = genSystems (system: import nixpkgs {inherit system;});
-    gdextensions = genSystems (system: pkgs.${system}.callPackage ./gdextensions {});
+    gdexts = genSystems (system: pkgs.${system}.callPackage ./gdextensions {});
   in {
     packages = genSystems (system: rec {
-      gdextensions = gdextensions.${system};
+      gdextensions = gdexts.${system};
       project = pkgs.${system}.callPackage ./. {};
       default = project;
     });
@@ -26,8 +26,8 @@
     devShell = genSystems (system:
       pkgs.${system}.mkShell {
         shellHook = ''
-          export GODOT_CPP_LOCATION=${gdextensions.${system}}
-          export GODOT_HEADERS_LOCATION=${gdextensions.${system}}/godot-headers
+          export GODOT_CPP_LOCATION=${gdexts.${system}}
+          export GODOT_HEADERS_LOCATION=${gdexts.${system}}/godot-headers
         '';
         packages = with pkgs.${system}; [
           clangStdenv
