@@ -148,9 +148,15 @@ if(CMAKE_VERSION VERSION_GREATER "3.13")
         #[[ GODOT_CPP ]]
 	)
 
-	target_link_libraries(${PROJECT_NAME}
-		godot-cpp.${SYSTEM_NAME}.${BUILD_TYPE}$<$<NOT:$<PLATFORM_ID:Android>>:.${BITS}>
-	)
+	if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+		target_link_libraries(${PROJECT_NAME}
+			libgodot-cpp.${SYSTEM_NAME}.${BUILD_TYPE}$<$<NOT:$<PLATFORM_ID:Android>>:.${BITS}>
+		)
+	else()
+		target_link_libraries(${PROJECT_NAME}
+			godot-cpp.${SYSTEM_NAME}.${BUILD_TYPE}$<$<NOT:$<PLATFORM_ID:Android>>:.${BITS}>
+		)
+	endif()
 else()
 	target_link_libraries(${PROJECT_NAME}
 			${CPP_BINDINGS_PATH}/bin/libgodot-cpp.${SYSTEM_NAME}.${BUILD_TYPE}$<$<NOT:$<PLATFORM_ID:Android>>:.${BITS}>.a
