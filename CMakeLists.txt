@@ -119,7 +119,7 @@ target_include_directories(${PROJECT_NAME} SYSTEM
 
 set(BITS 32)
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
-	set(BITS 64)
+	set(BITS x86_64)
 endif(CMAKE_SIZEOF_VOID_P EQUAL 8)
 
 # if(CMAKE_BUILD_TYPE MATCHES Debug)
@@ -138,9 +138,14 @@ if(ANDROID)
 endif()
 
 if(CMAKE_VERSION VERSION_GREATER "3.13")
+    # define godot cpp as a library
+    # add_library(GODOT_CPP STATIC ${CPP_BINDINGS_PATH}/bin)
+    # set_target_properties(GODOT_CPP PROPERTIES LINKER_LANGUAGE CXX)
+
 	target_link_directories(${PROJECT_NAME}
 		PRIVATE
-		${CPP_BINDINGS_PATH}/bin/
+        ${CPP_BINDINGS_PATH}/bin/
+        #[[ GODOT_CPP ]]
 	)
 
 	target_link_libraries(${PROJECT_NAME}
