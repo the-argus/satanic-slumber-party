@@ -17,4 +17,4 @@ config/icon="res://icon.svg"
 
 [native_extensions]
 
-paths=["res://ssp.gdextension"]
+paths=["res://extensions/ssp/ssp.gdextension"]

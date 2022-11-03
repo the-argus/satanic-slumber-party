@@ -26,7 +26,7 @@ if env["platform"] == "macos":
     )
 else:
     library = env.SharedLibrary(
-        "project/bin/ssp/libssp{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+        "project/extensions/ssp/bin/libssp{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
         source=sources,
     )
 
