@@ -24,15 +24,14 @@
     });
 
     devShell = genSystems (system:
-      pkgs.${system}.mkShell {
+      pkgs.${system}.mkShell.override {
+        stdenv = pkgs.${system}.clangStdenv;
+      } {
         shellHook = ''
           export GODOT_CPP_LOCATION=${gdexts.${system}}
           export GODOT_HEADERS_LOCATION=${gdexts.${system}}/godot-headers
         '';
         packages = with pkgs.${system}; [
-          clangStdenv
-          libclang
-          llvmPackages.libstdcxxClang
           clang-tools
           bear
 
