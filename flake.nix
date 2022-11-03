@@ -15,10 +15,8 @@
     ];
     genSystems = nixpkgs.lib.genAttrs supportedSystems;
     pkgs = genSystems (system: import nixpkgs {inherit system;});
-    gdexts = genSystems (system: pkgs.${system}.callPackage ./gdextensions {});
   in {
     packages = genSystems (system: rec {
-      gdextensions = gdexts.${system};
       project = pkgs.${system}.callPackage ./. {};
       default = project;
     });
@@ -28,14 +26,13 @@
         stdenv = pkgs.${system}.clangStdenv;
       } {
         shellHook = ''
-          export GODOT_CPP_LOCATION=${gdexts.${system}}
-          export GODOT_HEADERS_LOCATION=${gdexts.${system}}/godot-headers
+          export SCONS_USE_ENVIRONMENT=yes
         '';
         packages = with pkgs.${system}; [
           clang-tools
           bear
 
-          cmake
+          scons
         ];
       });
   };

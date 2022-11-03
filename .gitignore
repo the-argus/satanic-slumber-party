@@ -16,19 +16,12 @@ result
 
 .direnv/
 
-# i like to work with these in this directory sometimes
-godot-cpp/
-godot-headers
-
-# cmake stuff
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
 compile_commands.json
-CTestTestfile.cmake
-_deps
+
+
+# for projects that use SCons for building: http://http://www.scons.org/
+.sconsign.dblite
+
+# When configure fails, SCons outputs these
+config.log
+.sconf_temp

@@ -1,23 +1,18 @@
 {
   stdenv,
-  cmake,
-  callPackage,
+  scons,
   ...
 }:
 stdenv.mkDerivation {
-  name = "satanic-slumber-party-cpp-modules";
+  name = "satanic-slumber-party_godot-project";
   src = ./.;
 
   buildInputs = [
-    cmake
+    scons
   ];
 
   buildPhase = ''
-    export GODOT_CPP_LOCATION=${callPackage ./gdextensions {}}
-    export GODOT_HEADERS_LOCATION=${callPackage ./gdextensions {}}/godot-headers
-    cmake -S . -B bin
-    cd bin
-    make
+    scons
   '';
 
   installPhase = ''
