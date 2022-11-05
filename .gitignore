@@ -27,3 +27,4 @@ config.log
 .sconf_temp
 
 *.os
+*.obj
