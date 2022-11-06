@@ -75,7 +75,7 @@ public:
 	~Example();
 
 	// Functions.
-	void simple_func();
+	void play_animation();
 	void simple_const_func() const;
 	String return_something(const String &base);
 	Viewport *return_something_const() const;

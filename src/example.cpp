@@ -10,6 +10,7 @@
 #include <godot_cpp/classes/global_constants.hpp>
 #include <godot_cpp/classes/label.hpp>
 #include <godot_cpp/variant/utility_functions.hpp>
+#include <godot_cpp/classes/animation_player.hpp>
 
 using namespace godot;
 
@@ -95,7 +96,7 @@ bool Example::_property_get_revert(const StringName &p_name, Variant &r_property
 
 void Example::_bind_methods() {
 	// Methods.
-	ClassDB::bind_method(D_METHOD("simple_func"), &Example::simple_func);
+	ClassDB::bind_method(D_METHOD("play_animation"), &Example::play_animation);
 	ClassDB::bind_method(D_METHOD("simple_const_func"), &Example::simple_const_func);
 	ClassDB::bind_method(D_METHOD("return_something"), &Example::return_something);
 	ClassDB::bind_method(D_METHOD("return_something_const"), &Example::return_something_const);
@@ -162,8 +163,9 @@ Example::~Example() {
 }
 
 // Methods.
-void Example::simple_func() {
-	UtilityFunctions::print("  Simple func called.");
+void Example::play_animation() {
+    AnimationPlayer* player = get_node<AnimationPlayer>(NodePath("AnimationPlayer"));
+    player->play(String("Animation"));
 }
 
 void Example::simple_const_func() const {
