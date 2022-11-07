@@ -164,8 +164,12 @@ Example::~Example() {
 
 // Methods.
 void Example::play_animation() {
-    AnimationPlayer* player = get_node<AnimationPlayer>(NodePath("AnimationPlayer"));
-    player->play(String("Animation"));
+    AnimationPlayer* player = get_node<AnimationPlayer>("AnimationPlayer");
+    if (player) {
+        player->play("Animation");
+    } else {
+        UtilityFunctions::print("no AnimationPlayer found");
+    }
 }
 
 void Example::simple_const_func() const {
