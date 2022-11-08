@@ -10,7 +10,6 @@ for root, dirnames, filenames in os.walk('.'):
     for dirname in dirnames:
         sources = sources + (Glob(os.path.join(root, dirname, "*.cpp")))
 
-
 # create and return the default target
 
 default_target = None
