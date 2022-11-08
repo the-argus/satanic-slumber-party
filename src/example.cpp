@@ -164,6 +164,7 @@ Example::~Example() {
 
 // Methods.
 void Example::play_animation() {
+    UtilityFunctions::print("playing animation...");
     AnimationPlayer* player = get_node<AnimationPlayer>("AnimationPlayer");
     if (player) {
         player->play("Animation");
