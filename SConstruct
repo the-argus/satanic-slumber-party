@@ -15,19 +15,13 @@ if os.environ.get("SCONS_USE_ENVIRONMENT") == "yes":
 
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=["src/"])
-sources = Glob("src/*.cpp")
 
-if env["platform"] == "macos":
-    library = env.SharedLibrary(
-        "game/bin/summator/libgdsummator.{}.{}.framework/libgdsummator.{}.{}".format(
-            env["platform"], env["target"], env["platform"], env["target"]
-        ),
-        source=sources,
-    )
-else:
-    library = env.SharedLibrary(
-        "project/extensions/ssp/bin/libssp{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
-        source=sources,
-    )
+default_target = SConscript(
+        'src/SConscript',
+        variant_dir='bin',
+        duplicate=0,
+        exports={'env': env}
+        )
 
-Default(library)
+
+Default(env.Install("./project/extensions/ssp/bin", default_target))
